@@ -1,9 +1,10 @@
 {
-  "functions": {
-    "main.js": {
-      "runtime": "nodejs18.x"
+  "builds": [
+    {
+      "src": "main.js",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/(.*)",
