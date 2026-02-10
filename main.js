@@ -43,7 +43,7 @@ function lcm(arr) {
   if (!Array.isArray(arr) || arr.length === 0) throw "LCM expects array";
   return arr.reduce((a, b) => (a * b) / gcd(a, b));
 }
-console.log("API KEY LOADED:", process.env.GEMINI_API_KEY);
+// console.log("API KEY LOADED:", process.env.GEMINI_API_KEY);
 async function askAI(question) {
   try {
     const response = await axios.post(
@@ -64,7 +64,7 @@ async function askAI(question) {
       },
       {
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
           "Content-Type": "application/json"
         }
       }
